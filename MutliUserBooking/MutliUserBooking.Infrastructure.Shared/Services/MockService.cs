@@ -9,24 +9,25 @@ namespace MutliUserBooking.Infrastructure.Shared.Services
     {
 
         /// <summary>
-        /// Gets a list of Users using the UserBogusConfig class.
-        /// </summary>
-        /// <param name="rowCount">The number of Users to generate.</param>
-        /// <returns>A list of Users.</returns>
-        public List<User> GetUsers(int rowCount)
-        {
-            var faker = new UserBogusConfig();
-            return faker.Generate(rowCount);
-        }
-
-        /// <summary>
-        /// Generates a list of seed users using the UserSeedBogusConfig class.
+        /// Generates a list of seed users using the UserBogusConfig class.
         /// </summary>
         /// <param name="rowCount">The number of seed users to generate.</param>
         /// <returns>A list of seed users.</returns>
         public List<User> SeedUsers(int rowCount)
         {
             var faker = new UserBogusConfig();
+            return faker.Generate(rowCount);
+        }
+
+
+        /// <summary>
+        /// Generates a list of seed trips using the TripBogusConfig class.
+        /// </summary>
+        /// <param name="rowCount">The number of seed trips to generate.</param>
+        /// <returns>A list of seed users.</returns>
+        public List<Trip> SeedTrips(int rowCount)
+        {
+            var faker = new TripBogusConfig();
             return faker.Generate(rowCount);
         }
 

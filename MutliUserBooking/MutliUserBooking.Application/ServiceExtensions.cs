@@ -20,6 +20,7 @@ namespace MutliUserBooking.Application
             services.AddScoped<IDataShapeHelper<Position>, DataShapeHelper<Position>>();
             services.AddScoped<IDataShapeHelper<Employee>, DataShapeHelper<Employee>>();
             services.AddScoped<IDataShapeHelper<User>, DataShapeHelper<User>>();
+            services.AddScoped<IDataShapeHelper<Trip>, DataShapeHelper<Trip>>();
             services.AddScoped<IModelHelper, ModelHelper>();
             //services.AddScoped<IMockData, MockData>();
         }
