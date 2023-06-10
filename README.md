@@ -4,7 +4,7 @@ This is a basic multi-user booking web API built using ASP.NET Core 7 and Entity
 
 ## Features
 
-- User authentication with email and password
+- Sead 1000 User and Trip using Bogus
 - CRUD operations for reservations
 - Seamless integration with Swagger for API documentation
 - CQRS pattern implementation using MediatR
