@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MutliUserBooking.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -15,6 +16,8 @@ namespace MutliUserBooking.Application.Interfaces
         Task<IEnumerable<T>> GetPagedAdvancedReponseAsync(int pageNumber, int pageSize, string orderBy, string fields);
 
         Task<T> AddAsync(T entity);
+
+        Task<Reservation> AddReservationAsync(Reservation entity);
 
         Task UpdateAsync(T entity);
 

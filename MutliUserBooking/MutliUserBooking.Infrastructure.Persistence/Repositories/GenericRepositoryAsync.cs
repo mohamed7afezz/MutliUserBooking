@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MutliUserBooking.Application.Interfaces;
+using MutliUserBooking.Domain.Entities;
 using MutliUserBooking.Infrastructure.Persistence.Contexts;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,24 @@ namespace MutliUserBooking.Infrastructure.Persistence.Repository
         {
             await _dbContext.Set<T>().AddAsync(entity);
             await _dbContext.SaveChangesAsync();
+            return entity;
+        }
+
+        public async Task<Reservation> AddReservationAsync(Reservation entity)
+        {
+            try
+            {
+                _dbContext.Entry(entity.Trip).State = EntityState.Unchanged;
+                _dbContext.Entry(entity.ReservedBy).State = EntityState.Unchanged;
+                await _dbContext.Set<Reservation>().AddAsync(entity);
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+
             return entity;
         }
 

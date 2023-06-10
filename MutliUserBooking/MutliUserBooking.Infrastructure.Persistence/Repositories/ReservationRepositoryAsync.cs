@@ -19,7 +19,8 @@ namespace MutliUserBooking.Infrastructure.Persistence.Repositories
     {
         private readonly IDataShapeHelper<Reservation> _dataShaper;
         private readonly DbSet<Reservation> _reservations;
-
+        private readonly DbSet<User> _user;
+        private readonly DbSet<Trip> _trip;
 
 
         /// <summary>
@@ -35,9 +36,20 @@ namespace MutliUserBooking.Infrastructure.Persistence.Repositories
         {
             _dataShaper = dataShaper;
             _reservations = dbContext.Set<Reservation>();
+            _user = dbContext.Set<User>();
+            _trip = dbContext.Set<Trip>();
         }
 
-
+        public async Task<bool> IsValidUserIdAsync(Guid UserId)
+        {
+            return await _user
+                .AnyAsync(p => p.Id == UserId);
+        }
+        public async Task<bool> IsValidTripIdAsync(Guid TripId)
+        {
+            return await _trip
+                .AnyAsync(p => p.Id == TripId);
+        }
 
         /// <summary>
         /// Retrieves a paged list of Reservations based on the provided query parameters.

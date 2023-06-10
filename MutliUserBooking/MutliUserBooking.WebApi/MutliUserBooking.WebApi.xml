@@ -83,6 +83,28 @@
             <param name="id">The Id of the reservation.</param>
             <returns>The reservation with the specified Id.</returns>
         </member>
+        <member name="M:MutliUserBooking.WebApi.Controllers.v1.ReservationController.Post(MutliUserBooking.Application.Features.Reservations.Commands.CreateReservation.CreateReservationCommand)">
+            <summary>
+            Creates a new Reservation.
+            </summary>
+            <param name="command">The command containing the data for the new Reservation.</param>
+            <returns>A 201 Created response containing the newly created Reservation.</returns>
+        </member>
+        <member name="M:MutliUserBooking.WebApi.Controllers.v1.ReservationController.Put(System.Guid,MutliUserBooking.Application.Features.Reservations.Commands.UpdateReservation.UpdateReservationCommand)">
+            <summary>
+            Updates a Reservation with the given id using the provided command.
+            </summary>
+            <param name="id">The id of the Reservation to update.</param>
+            <param name="command">The command containing the updated information.</param>
+            <returns>The updated Reservation.</returns>
+        </member>
+        <member name="M:MutliUserBooking.WebApi.Controllers.v1.ReservationController.Delete(System.Guid)">
+            <summary>
+            Deletes a Reservation by its Id.
+            </summary>
+            <param name="id">The Id of the Reservation to delete.</param>
+            <returns>The result of the deletion.</returns>
+        </member>
         <member name="M:MutliUserBooking.WebApi.Controllers.v1.TripsController.Get(MutliUserBooking.Application.Features.Trips.Queries.GetTrips.GetTripsQuery)">
             <summary>
             Gets a list of Trips based on the specified filter.

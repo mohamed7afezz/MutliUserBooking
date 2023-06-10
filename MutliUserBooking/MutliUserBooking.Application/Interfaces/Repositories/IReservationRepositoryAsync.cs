@@ -1,6 +1,7 @@
 ﻿using MutliUserBooking.Application.Features.Reservations.Queries.GetReservations;
 using MutliUserBooking.Application.Parameters;
 using MutliUserBooking.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -15,6 +16,8 @@ namespace MutliUserBooking.Application.Interfaces.Repositories
     /// </returns>
     public interface IReservationRepositoryAsync : IGenericRepositoryAsync<Reservation>
     {
+        Task<bool> IsValidUserIdAsync(Guid UserId);
+        Task<bool> IsValidTripIdAsync(Guid TripId);
         Task<(IEnumerable<Entity> data, RecordsCount recordsCount)> GetPagedReservationResponseAsync(GetReservationsQuery requestParameters);
     }
 }
