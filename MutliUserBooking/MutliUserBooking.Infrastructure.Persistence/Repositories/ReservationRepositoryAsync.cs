@@ -48,6 +48,7 @@ namespace MutliUserBooking.Infrastructure.Persistence.Repositories
         {
             IQueryable<Reservation> result;
 
+            var id = requestParameters.Id;
             var reservedBy = requestParameters.UserId;
             var customerName = requestParameters.CustomerName;
             var tripId = requestParameters.TripId;
@@ -67,7 +68,7 @@ namespace MutliUserBooking.Infrastructure.Persistence.Repositories
             recordsTotal = result.Count();
 
             // filter data
-            FilterByColumn(ref result, reservedBy, customerName, tripId);
+            FilterByColumn(ref result, id, reservedBy, customerName, tripId);
 
             // Count records after filter
             recordsFiltered = result.Count();
@@ -117,15 +118,18 @@ namespace MutliUserBooking.Infrastructure.Persistence.Repositories
         /// <param name="reservedBy">The reservedBy to filter by</param>
         /// <param name="customerName">The last customerName to filter by.</param>
         /// <param name="tripId">The last tripId to filter by.</param>
-        private void FilterByColumn(ref IQueryable<Reservation> Reservations, Guid? reservedBy, string customerName, Guid? tripId)
+        private void FilterByColumn(ref IQueryable<Reservation> Reservations, Guid? id, Guid? reservedBy, string customerName, Guid? tripId)
         {
             if (!Reservations.Any())
                 return;
 
-            if (Guid.Equals(reservedBy, null) && string.IsNullOrEmpty(customerName) && Guid.Equals(tripId, null))
+            if (Guid.Equals(id, null) && Guid.Equals(reservedBy, null) && string.IsNullOrEmpty(customerName) && Guid.Equals(tripId, null))
                 return;
 
             var predicate = PredicateBuilder.New<Reservation>();
+
+            if (!Guid.Equals(id, null))
+                predicate = predicate.Or(p => p.Id.Equals(id));
 
             if (!Guid.Equals(reservedBy, null))
                 predicate = predicate.Or(p => p.ReservedBy.Id.Equals(reservedBy));

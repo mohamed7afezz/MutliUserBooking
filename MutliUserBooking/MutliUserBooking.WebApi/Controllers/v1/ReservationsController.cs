@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MutliUserBooking.Application.Features.Reservations.Queries.GetReservationById;
 using MutliUserBooking.Application.Features.Reservations.Queries.GetReservations;
-using MutliUserBooking.Application.Features.User.Queries.GetUsers;
+using System;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -20,6 +21,17 @@ namespace MutliUserBooking.WebApi.Controllers.v1
         public async Task<IActionResult> Get([FromQuery] GetReservationsQuery filter)
         {
             return Ok(await Mediator.Send(filter));
+        }
+
+        /// <summary>
+        /// Gets a reservation by its Id.
+        /// </summary>
+        /// <param name="id">The Id of the reservation.</param>
+        /// <returns>The reservation with the specified Id.</returns>
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(Guid id)
+        {
+            return Ok(await Mediator.Send(new GetReservationByIdQuery { Id = id }));
         }
 
     }

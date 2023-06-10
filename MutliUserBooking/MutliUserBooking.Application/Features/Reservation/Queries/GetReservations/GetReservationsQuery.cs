@@ -14,6 +14,7 @@ namespace MutliUserBooking.Application.Features.Reservations.Queries.GetReservat
 {
     public class GetReservationsQuery : QueryParameter, IRequest<PagedResponse<IEnumerable<Entity>>>
     {
+        public Guid? Id { get; set; }
         public Guid? UserId { get; set; }
         public string CustomerName { get; set; }
         public Guid? TripId { get; set; }
