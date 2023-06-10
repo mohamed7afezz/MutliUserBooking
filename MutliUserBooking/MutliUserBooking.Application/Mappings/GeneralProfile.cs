@@ -2,6 +2,7 @@
 using MutliUserBooking.Application.Features.Employees.Queries.GetEmployees;
 using MutliUserBooking.Application.Features.Positions.Commands.CreatePosition;
 using MutliUserBooking.Application.Features.Positions.Queries.GetPositions;
+using MutliUserBooking.Application.Features.User.Queries.GetUsers;
 using MutliUserBooking.Domain.Entities;
 
 namespace MutliUserBooking.Application.Mappings
@@ -12,6 +13,7 @@ namespace MutliUserBooking.Application.Mappings
         {
             CreateMap<Position, GetPositionsViewModel>().ReverseMap();
             CreateMap<Employee, GetEmployeesViewModel>().ReverseMap();
+            CreateMap<User, GetUsersViewModel>().ReverseMap();
             CreateMap<CreatePositionCommand, Position>();
         }
     }

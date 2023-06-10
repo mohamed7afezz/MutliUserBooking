@@ -19,6 +19,7 @@ namespace MutliUserBooking.Application
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services.AddScoped<IDataShapeHelper<Position>, DataShapeHelper<Position>>();
             services.AddScoped<IDataShapeHelper<Employee>, DataShapeHelper<Employee>>();
+            services.AddScoped<IDataShapeHelper<User>, DataShapeHelper<User>>();
             services.AddScoped<IModelHelper, ModelHelper>();
             //services.AddScoped<IMockData, MockData>();
         }

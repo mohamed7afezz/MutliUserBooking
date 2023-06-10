@@ -69,5 +69,12 @@
             <param name="id">The Id of the position to delete.</param>
             <returns>The result of the deletion.</returns>
         </member>
+        <member name="M:MutliUserBooking.WebApi.Controllers.v1.UsersController.Get(MutliUserBooking.Application.Features.User.Queries.GetUsers.GetUsersQuery)">
+            <summary>
+            Gets a list of employees based on the specified filter.
+            </summary>
+            <param name="filter">The filter used to get the list of employees.</param>
+            <returns>A list of employees.</returns>
+        </member>
     </members>
 </doc>

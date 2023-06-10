@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Features\User\Queries\GetUsers\GetUsersQuery.csxx" />
+    <None Remove="Features\User\Queries\GetUsers\PagedUsersQuery.csxx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="FluentValidation" Version="11.5.1" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.1" />

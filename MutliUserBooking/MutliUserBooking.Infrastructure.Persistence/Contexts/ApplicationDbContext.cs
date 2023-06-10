@@ -25,6 +25,7 @@ namespace MutliUserBooking.Infrastructure.Persistence.Contexts
         }
 
         public DbSet<Position> Positions { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
@@ -49,6 +50,9 @@ namespace MutliUserBooking.Infrastructure.Persistence.Contexts
             var _mockData = this.Database.GetService<IMockService>();
             var seedPositions = _mockData.SeedPositions(1000);
             builder.Entity<Position>().HasData(seedPositions);
+
+            var seedUsers = _mockData.SeedUsers(1000);
+            builder.Entity<User>().HasData(seedUsers);
 
             base.OnModelCreating(builder);
         }
