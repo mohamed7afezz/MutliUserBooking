@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MutliUserBooking.Application.Features.Reservations.Queries.GetReservations;
 using MutliUserBooking.Application.Features.User.Queries.GetUsers;
 using System.Threading.Tasks;
 
@@ -7,16 +8,16 @@ using System.Threading.Tasks;
 namespace MutliUserBooking.WebApi.Controllers.v1
 {
     [ApiVersion("1.0")]
-    public class UsersController : BaseApiController
+    public class ReservationController : BaseApiController
     {
 
         /// <summary>
-        /// Gets a list of users based on the specified filter.
+        /// Gets a list of reservation based on the specified filter.
         /// </summary>
-        /// <param name="filter">The filter used to get the list of users.</param>
-        /// <returns>A list of user.</returns>
+        /// <param name="filter">The filter used to get the list of reservation.</param>
+        /// <returns>A list of reservation.</returns>
         [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] GetUsersQuery filter)
+        public async Task<IActionResult> Get([FromQuery] GetReservationsQuery filter)
         {
             return Ok(await Mediator.Send(filter));
         }

@@ -69,6 +69,13 @@
             <param name="id">The Id of the position to delete.</param>
             <returns>The result of the deletion.</returns>
         </member>
+        <member name="M:MutliUserBooking.WebApi.Controllers.v1.ReservationController.Get(MutliUserBooking.Application.Features.Reservations.Queries.GetReservations.GetReservationsQuery)">
+            <summary>
+            Gets a list of reservation based on the specified filter.
+            </summary>
+            <param name="filter">The filter used to get the list of reservation.</param>
+            <returns>A list of reservation.</returns>
+        </member>
         <member name="M:MutliUserBooking.WebApi.Controllers.v1.TripsController.Get(MutliUserBooking.Application.Features.Trips.Queries.GetTrips.GetTripsQuery)">
             <summary>
             Gets a list of Trips based on the specified filter.
@@ -80,7 +87,7 @@
             <summary>
             Gets a list of users based on the specified filter.
             </summary>
-            <param name="filter">The filter used to get the list of employees.</param>
+            <param name="filter">The filter used to get the list of users.</param>
             <returns>A list of user.</returns>
         </member>
     </members>

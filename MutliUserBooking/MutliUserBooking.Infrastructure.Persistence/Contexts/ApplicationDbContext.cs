@@ -27,7 +27,7 @@ namespace MutliUserBooking.Infrastructure.Persistence.Contexts
         public DbSet<Position> Positions { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Trip> Trips { get; set; }
-
+        public DbSet<Reservation> Reservations { get; set; }    
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
             foreach (var entry in ChangeTracker.Entries<AuditableBaseEntity>())

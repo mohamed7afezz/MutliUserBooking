@@ -33,6 +33,7 @@ namespace MutliUserBooking.Infrastructure.Persistence
             services.AddTransient<IEmployeeRepositoryAsync, EmployeeRepositoryAsync>();
             services.AddTransient<IUserRepositoryAsync, UserRepositoryAsync>();
             services.AddTransient<ITripRepositoryAsync, TripRepositoryAsync>();
+            services.AddTransient<IReservationRepositoryAsync, ReservationRepositoryAsync>();
 
             #endregion Repositories
         }
