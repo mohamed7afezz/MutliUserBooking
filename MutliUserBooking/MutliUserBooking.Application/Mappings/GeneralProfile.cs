@@ -1,7 +1,4 @@
 ﻿using AutoMapper;
-using MutliUserBooking.Application.Features.Employees.Queries.GetEmployees;
-using MutliUserBooking.Application.Features.Positions.Commands.CreatePosition;
-using MutliUserBooking.Application.Features.Positions.Queries.GetPositions;
 using MutliUserBooking.Application.Features.Reservations.Commands.CreateReservation;
 using MutliUserBooking.Application.Features.Reservations.Queries.GetReservations;
 using MutliUserBooking.Application.Features.Trips.Queries.GetTrips;
@@ -19,10 +16,6 @@ namespace MutliUserBooking.Application.Mappings
             CreateMap<User, GetUsersViewModel>().ReverseMap();
             CreateMap<Reservation, GetReservationsViewModel>().ReverseMap();
             CreateMap<CreateReservationCommand, Reservation>();
-
-            CreateMap<Position, GetPositionsViewModel>().ReverseMap();
-            CreateMap<Employee, GetEmployeesViewModel>().ReverseMap();
-            CreateMap<CreatePositionCommand, Position>();
         }
     }
 }

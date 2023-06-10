@@ -9,10 +9,5 @@ namespace MutliUserBooking.Application.Interfaces
 
         List<Trip> SeedTrips(int rowCount);
 
-        List<Position> GetPositions(int rowCount);
-        
-        List<Employee> GetEmployees(int rowCount);
-
-        List<Position> SeedPositions(int rowCount);
     }
 }

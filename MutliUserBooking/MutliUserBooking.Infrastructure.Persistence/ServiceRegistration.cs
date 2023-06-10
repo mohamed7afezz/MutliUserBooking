@@ -29,8 +29,6 @@ namespace MutliUserBooking.Infrastructure.Persistence
             #region Repositories
 
             services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
-            services.AddTransient<IPositionRepositoryAsync, PositionRepositoryAsync>();
-            services.AddTransient<IEmployeeRepositoryAsync, EmployeeRepositoryAsync>();
             services.AddTransient<IUserRepositoryAsync, UserRepositoryAsync>();
             services.AddTransient<ITripRepositoryAsync, TripRepositoryAsync>();
             services.AddTransient<IReservationRepositoryAsync, ReservationRepositoryAsync>();

@@ -24,7 +24,7 @@ namespace MutliUserBooking.Infrastructure.Persistence.Contexts
             _loggerFactory = loggerFactory;
         }
 
-        public DbSet<Position> Positions { get; set; }
+
         public DbSet<User> Users { get; set; }
         public DbSet<Trip> Trips { get; set; }
         public DbSet<Reservation> Reservations { get; set; }    
@@ -49,8 +49,6 @@ namespace MutliUserBooking.Infrastructure.Persistence.Contexts
         protected override void OnModelCreating(ModelBuilder builder)
         {
             var _mockData = this.Database.GetService<IMockService>();
-            var seedPositions = _mockData.SeedPositions(1000);
-            builder.Entity<Position>().HasData(seedPositions);
 
             var seedUsers = _mockData.SeedUsers(1000);
             builder.Entity<User>().HasData(seedUsers);

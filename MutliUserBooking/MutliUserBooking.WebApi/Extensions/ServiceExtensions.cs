@@ -21,13 +21,13 @@ namespace MutliUserBooking.WebApi.Extensions
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Clean Architecture - TalentManagementAPI",
-                    Description = "This Api will be responsible for overall data distribution and authorization.",
+                    Title = "Assesment - Multi-User Booking Web API",
+                    Description = "This is a basic multi-user booking web API built using ASP.NET Core 7 and Entity Framework 7. It provides a set of RESTful APIs for managing reservations for trips.",
                     Contact = new OpenApiContact
                     {
-                        Name = "Jane Doe",
-                        Email = "jdoe@janedoe.com",
-                        Url = new Uri("https://janedoe.com/contact"),
+                        Name = "Mohamed Hafez",
+                        Email = "mohamed7afezz@gmail.com",
+                        Url = new Uri("https://www.linkedin.com/in/mohamed7afezz/"),
                     }
                 });
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
