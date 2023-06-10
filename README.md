@@ -41,7 +41,7 @@ This is a basic multi-user booking web API built using ASP.NET Core 7 and Entity
 7. Run the application:
 `dotnet run`
 
-8. The API will be accessible at `https://localhost:5001` (or `http://localhost:5000`).
+8. The API will be accessible at `https://localhost:44378` (or `http://localhost:44378`).
 
 ## API Endpoints
 
